@@ -1,14 +1,17 @@
+import { Dog } from '../../models';
 import './Card.css'
 import LikeBtn from './LikeBTN/LikeBTN';
+import MediaFile from './MediaFile/MediaFile';
 
 interface CardProps {
-  link: string;
+  dog: Dog;
 }
 
 export default function Card(props: CardProps){
     return(
       <div className="media-card">
-        <img src={props.link} className='media-item'></img>
+        <MediaFile url={props.dog.url_text}/>
+        {/* <img src={props.dog.url_text} className='media-item' alt='doggy'></img> */}
         <LikeBtn />
       </div>
     )
